@@ -26,7 +26,7 @@ pipeline {
         //   installation: 'Ansible',
         //   inventory: './hosts',
         //   playbook: './playbook.yml'
-        ansible-playbook tree.yml
+        sh 'ansible-playbook tree.yml'
       }
     }
   }
