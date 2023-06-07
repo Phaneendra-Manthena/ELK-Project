@@ -2,6 +2,7 @@
 - hosts: all
   tasks:
   - name: install git, wget and tree on nodes using loops
+    become: true
     apt:
       name: "{{ item }}"
       state: present
