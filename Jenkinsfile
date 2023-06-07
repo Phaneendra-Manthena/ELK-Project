@@ -1,9 +1,14 @@
 pipeline {
-  agent any
+  agent {label 'slave'}
+
   stages {
-    stage('beats installation') {
+    stage('Hello') {
       steps {
-        sh 'ansible-playbook elastic.beats/elasic.yml'
+        sh '''
+          ansible --version
+          ansible-playbook --version
+          ansible-galaxy --version
+        '''
       }
     }
   }
