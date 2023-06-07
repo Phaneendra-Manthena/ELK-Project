@@ -19,7 +19,7 @@ pipeline {
      credentialsId: 'newansible',
       installation: 'Ansible',
        inventory: './hosts',
-        playbook: './playbook.yml'
+        playbook: './tree.yml'
   }
 }
   }
