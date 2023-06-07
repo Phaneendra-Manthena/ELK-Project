@@ -13,16 +13,20 @@ pipeline {
         '''
       }
     }
-    stage('Run Ansible Playbook') {
-  steps {
-     ansiblePlaybook becomeUser: 'ansible', 
-     credentialsId: 'newansible',
-      installation: 'Ansible',
-       inventory: './hosts',
-        playbook: './tree.yml,',
-        playbook: './playbook.yml,'
-
-  }
-}
+    stage('Run Ansible Playbooks') {
+      steps {
+        ansiblePlaybook becomeUser: 'ansible',
+          credentialsId: 'newansible',
+          installation: 'Ansible',
+          inventory: './hosts',
+          playbook: './tree.yml'
+          
+        ansiblePlaybook becomeUser: 'ansible',
+          credentialsId: 'newansible',
+          installation: 'Ansible',
+          inventory: './hosts',
+          playbook: './playbook.yml'
+      }
+    }
   }
 }
