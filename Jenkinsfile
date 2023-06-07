@@ -15,13 +15,13 @@ pipeline {
     }
     stage('Run Ansible Playbooks') {
       steps {
-        ansiblePlaybook becomeUser: 'ansible',
+        ansiblePlaybook becomeUser: 'ansibl',
           credentialsId: 'newansible',
           installation: 'Ansible',
           inventory: './hosts',
           playbook: './tree.yml'
           
-        ansiblePlaybook becomeUser: 'ansible',
+        ansiblePlaybook becomeUser: 'ansibl',
           credentialsId: 'newansible',
           installation: 'Ansible',
           inventory: './hosts',
