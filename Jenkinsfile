@@ -15,12 +15,11 @@ pipeline {
     }
     stage('Run Ansible Playbook') {
   steps {
-    ansiblePlaybook becomeUser: 'ansible',
-                   colorized: true,
-                   credentialsId: 'jenkins-slave',
-                   installation: 'Ansible',
-                   inventory: './hosts',
-                   playbook: './playbook.yml'
+     ansiblePlaybook becomeUser: 'ansible', 
+     credentialsId: 'newansible',
+      installation: 'Ansible',
+       inventory: './hosts',
+        playbook: './playbook.yml'
   }
 }
   }
