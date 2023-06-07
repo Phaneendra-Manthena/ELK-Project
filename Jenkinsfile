@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('beats installation') {
       steps {
-        sh 'ansible-playbook elastic.beats/elastic.yml'
+        sh 'ansible-playbook elastic.beats/elasic.yml'
       }
     }
   }
