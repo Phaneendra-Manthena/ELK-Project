@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Run Ansible Playbook') {
   steps {
-    ansiblePlaybook becomeUser: 'jenkins',
+    ansiblePlaybook becomeUser: 'ansible',
                    colorized: true,
                    credentialsId: 'jenkins-slave',
                    installation: 'Ansible',
