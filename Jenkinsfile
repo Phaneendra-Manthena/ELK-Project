@@ -19,7 +19,7 @@ pipeline {
                    colorized: true,
                    credentialsId: 'jenkins-slave',
                    installation: 'Ansible',
-                   inventory: '/etc/ansible/hosts',
+                   inventory: '/etc/ansble/hosts',
                    playbook: './playbook.yml'
   }
 }
