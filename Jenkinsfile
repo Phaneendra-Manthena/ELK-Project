@@ -27,6 +27,8 @@ pipeline {
         //   inventory: './hosts',
         //   playbook: './playbook.yml'
         sh 'ansible-playbook tree.yml'
+        sh 'ansible-playbook playbook.yml'
+        sh 'ansible all -m ping'
       }
     }
   }
