@@ -15,17 +15,15 @@ pipeline {
     }
     stage('Run Ansible Playbooks') {
       steps {
-        // ansiblePlaybook becomeUser: 'ansible',
-        //   credentialsId: 'newansible',
-        //   installation: 'Ansible',
-        //   inventory: './hosts',
-        //   playbook: './tree.yml'
+        ansiblePlaybook becomeUser: 'ansible',
+       credentialsId: 'newansible',
+           installation: 'Ansible',
+      inventory: './hosts',
+          playbook: './tree.yml'
           
-        // ansiblePlaybook becomeUser: 'ansible',
-        //   credentialsId: 'newansible',
-        //   installation: 'Ansible',
-        //   inventory: './hosts',
-        //   playbook: './playbook.yml'
+    credentialsId: 'newansible',
+   inventory: './hosts',
+      playbook: './playbook.yml'
         sh 'ansible-playbook tree.yml'
         sh 'ansible-playbook playbook.yml'
         sh 'ansible all -m ping'
