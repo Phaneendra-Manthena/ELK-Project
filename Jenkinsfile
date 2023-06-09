@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    label 'slave'
-  }
+  agent any
 
   stages {
     stage('Hello') {
@@ -15,13 +13,14 @@ pipeline {
     }
     stage('Run Ansible Playbooks') {
       steps {
-        ansiblePlaybook becomeUser: 'ansible',
-       credentialsId: 'jenkins-slave',
-           installation: 'Ansible',
+       ansiblePlaybook becomeUser: 'jenkins',
+                   colorized: true,
+                   credentialsId: 'jenkins-slave',
+                   installation: 'Ansible',
       inventory: './hosts',
           playbook: './tree.yml'
           
-    credentialsId: 'newansible',
+    credentialsId: 'jenkins-slave',
    inventory: './hosts',
       playbook: './playbook.yml'
         sh 'ansible-playbook tree.yml'
