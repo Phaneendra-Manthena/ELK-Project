@@ -16,7 +16,7 @@ pipeline {
     stage('Run Ansible Playbooks') {
       steps {
         ansiblePlaybook becomeUser: 'ansible',
-       credentialsId: 'newansible',
+       credentialsId: 'jenkins-slave',
            installation: 'Ansible',
       inventory: './hosts',
           playbook: './tree.yml'
