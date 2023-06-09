@@ -18,7 +18,7 @@ pipeline {
           credentialsId: 'jenkins-slave',
           installation: 'Ansible',
           inventory: './hosts',
-          playbook: './tree.yml
+          playbook: './tree.yml'
  
         ansiblePlaybook becomeUser: 'jenkins',
           colorized: true,
