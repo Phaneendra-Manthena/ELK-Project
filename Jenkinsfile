@@ -18,17 +18,15 @@ pipeline {
           credentialsId: 'jenkins-slave',
           installation: 'Ansible',
           inventory: './hosts',
-          playbook: './tree.yml'
-      }
-      steps {
+          playbook: './tree.yml
+ 
         ansiblePlaybook becomeUser: 'jenkins',
           colorized: true,
           credentialsId: 'jenkins-slave',
           installation: 'Ansible',
           inventory: './hosts',
           playbook: './playbook.yml'
-      }
-      steps {
+     
         sh 'ansible-playbook tree.yml'
         sh 'ansible-playbook playbook.yml'
         sh 'ansible all -m ping'
