@@ -9,8 +9,8 @@
     beat: metricbeat
     beat_conf:
       metricbeat.modules:
-      - system
-      - kafka
+        - system
+        - kafka
       enabled: true
   tasks:
     - name: Ansible copy file force
@@ -26,4 +26,4 @@
         update_cache: yes
         force: yes
         allow_downgrades: yes
-
+        install_options: "--allow-downgrades"
