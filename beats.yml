@@ -1,3 +1,4 @@
+---
 - name: Elastic Beats Installation
   hosts: LinuxServers
   become: true
@@ -25,11 +26,8 @@
         autoclean: yes
 
     - name: Debian - Ensure metricbeat is installed
-      become: true
       apt:
         name: metricbeat=7.16.3
         state: present
         update_cache: yes
         force: yes
-        allow_downgrades: yes
-        install_options: "--allow-downgrades"
