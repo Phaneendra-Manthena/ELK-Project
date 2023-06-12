@@ -5,7 +5,7 @@
   roles:
     - elastic.beats
   vars:
-    beats_version: 7.16.3
+    beats_version: 7.17.0
     beat: metricbeat
     beat_conf:
       metricbeat.modules:
