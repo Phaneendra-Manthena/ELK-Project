@@ -189,5 +189,5 @@ processors:
 
 
 output.kafka:
-  hosts: ["10.142.0.2:9092"]
+  hosts: ["35.237.3.68:9092"]
   topic: phani-metricbeat
