@@ -10,7 +10,7 @@ pipeline {
                    credentialsId: 'ansible-privatekey',
                    installation: 'Ansible',
                    inventory: './hosts',
-                   playbook: './playbook.yml'
+                   playbook: './beats.yml'
   }
 }
     }

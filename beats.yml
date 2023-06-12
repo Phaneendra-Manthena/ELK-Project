@@ -1,0 +1,20 @@
+- name: Elastic Beats Installation
+  hosts: LinuxServers
+  become: true
+  become_user: root
+  roles: 
+    - elastic.beats
+  vars:
+    beats_version: 7.16.3
+    beat: metricbeat
+    beat_conf:
+      metricbeat.modules:
+      - system
+      - kafka
+      enabled: true
+  tasks:
+  - name: Ansible copy file force
+    copy:
+      src: metricbeat.yml
+      dest: /etc/metricbeat/metricbeat.yml
+      force: yes
