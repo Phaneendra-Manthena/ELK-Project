@@ -18,6 +18,12 @@
         src: metricbeat.yml
         dest: /etc/metricbeat/metricbeat.yml
         force: yes
+
+    - name: Remove unnecessary packages
+      apt:
+        autoremove: yes
+        autoclean: yes
+
     - name: Debian - Ensure metricbeat is installed
       become: true
       apt:
