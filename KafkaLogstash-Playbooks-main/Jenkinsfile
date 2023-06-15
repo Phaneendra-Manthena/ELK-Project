@@ -11,6 +11,7 @@ pipeline {
                    installation: 'Ansible',
                    inventory: './hosts',
                    playbook: 'KafkaLogstash-Playbooks-main/topic.yml'
+                  
   }
 }
     }

@@ -1,8 +1,16 @@
 - name: Create Kafka topic
   hosts: all
   tasks:
+    - name: Ensure community.general collection is installed
+      ansible.builtin.command:
+        cmd: ansible-galaxy collection install community.general
+      become: true
+      become_user: ansible
+      register: install_collection_result
+      changed_when: install_collection_result.rc != 0
+
     - name: Create Kafka topic
-      kafka_topic:
+      community.general.kafka_topic:
         name: phani-metricbeat
         state: present
         partitions: 1
