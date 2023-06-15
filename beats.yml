@@ -13,21 +13,21 @@
         - system
         - kafka
       enabled: true
-  tasks:
-    - name: Ansible copy file force
-      copy:
-        src: metricbeat.yml
-        dest: /etc/metricbeat/metricbeat.yml
-        force: yes
+  # tasks:
+  #   - name: Ansible copy file force
+  #     copy:
+  #       src: metricbeat.yml
+  #       dest: /etc/metricbeat/metricbeat.yml
+  #       force: yes
 
-    - name: Remove unnecessary packages
-      apt:
-        autoremove: yes
-        autoclean: yes
+  #   - name: Remove unnecessary packages
+  #     apt:
+  #       autoremove: yes
+  #       autoclean: yes
 
-    - name: Debian - Ensure metricbeat is installed
-      apt:
-        name: metricbeat=7.16.3
-        state: present
-        update_cache: yes
-        force: yes
+  #   - name: Debian - Ensure metricbeat is installed
+  #     apt:
+  #       name: metricbeat=7.16.3
+  #       state: present
+  #       update_cache: yes
+  #       force: yes
