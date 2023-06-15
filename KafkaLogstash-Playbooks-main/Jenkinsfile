@@ -10,7 +10,7 @@ pipeline {
                    credentialsId: 'ansible-privatekey',
                    installation: 'Ansible',
                    inventory: './hosts',
-                   playbook: 'KafkaLogstash-Playbooks-main/kafka.yml'
+                   playbook: 'KafkaLogstash-Playbooks-main/topic.yml'
   }
 }
     }
